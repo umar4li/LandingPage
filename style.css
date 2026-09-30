@@ -1,0 +1,230 @@
+@font-face {
+    font-family: "kajiro";
+    src: url("./fonts/Kajiro Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "gilroy";
+    src: url("./fonts/Gilroy-Light.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "gilroy";
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+}
+
+#back {
+    width: 100%;
+    height: 100vh;
+}
+
+#back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#top {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#workingarea {
+    position: relative;
+    margin: 0 auto;
+    width: 82%;
+    max-width: 1600px;
+    height: 100vh;
+}
+
+/* ===== NAV ===== */
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 0;
+    position: relative;
+    z-index: 20;
+}
+
+#nav img {
+    height: 48px;
+}
+
+#left, #right {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+#left a, #right a {
+    pointer-events: all;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* ===== HERO ===== */
+#hero {
+    position: absolute;
+    top: 58%;                    /* thoda neeche kiya */
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+/* LEFT SIDE */
+#hleft {
+    width: 58%;
+}
+
+#hleft .elem {
+    position: relative;
+    height: 8.8vw;
+    overflow: hidden;
+}
+
+#hleft .elem h1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    line-height: 0.88;
+    font-family: "kajiro";
+    color: #fff;
+    font-weight: 100;
+    font-size: 10.2vw;
+}
+
+#hleft .elem h1:nth-child(1) {
+    top: 0;
+}
+
+#hleft button {
+    pointer-events: all;
+    margin-top: 1.8vw;
+    padding: 0.75vw 2.8vw;
+    font-size: 2.6vw;
+    font-family: "kajiro";
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/* RIGHT SIDE */
+#hright {
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+    gap: 12px;
+}
+
+#hright p {
+    text-align: right;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1;
+    opacity: 0.95;
+}
+
+#hright #imgdiv {
+    width: 100%;
+    height: 165px;
+    margin: 8px 0 14px;
+    background-image: url("https://images.unsplash.com/photo-1788938594249-407d8be94d89?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0MXx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+
+#hright p:nth-child(3) {
+    margin-bottom: 40px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Laptop 15-16 inch (your screen) */
+@media (max-width: 1600px) {
+    #workingarea {
+        width: 85%;
+    }
+    #hleft .elem {
+        height: 8.6vw;
+    }
+    #hleft .elem h1 {
+        font-size: 9.8vw;
+    }
+}
+
+/* Smaller laptops */
+@media (max-width: 1366px) {
+    #workingarea {
+        width: 88%;
+    }
+    #hero {
+        top: 57%;
+    }
+    #hleft .elem {
+        height: 8.4vw;
+    }
+    #hleft .elem h1 {
+        font-size: 9.5vw;
+    }
+    #hleft button {
+        font-size: 2.4vw;
+        padding: 0.7vw 2.5vw;
+    }
+    #hright {
+        width: 23%;
+    }
+}
+
+/* Tablets / smaller screens */
+@media (max-width: 1024px) {
+    #workingarea {
+        width: 90%;
+    }
+    #hero {
+        top: 56%;
+    }
+    #hleft {
+        width: 60%;
+    }
+    #hleft .elem {
+        height: 9vw;
+    }
+    #hleft .elem h1 {
+        font-size: 9.2vw;
+    }
+    #hright {
+        width: 25%;
+    }
+    #hright #imgdiv {
+        height: 140px;
+    }
+}
